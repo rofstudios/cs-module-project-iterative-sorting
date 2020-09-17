@@ -1,7 +1,7 @@
 def linear_search(arr, target):
     # Your code here
-    for i in arr:
-        if i == target:
+    for i in range(len(arr)):
+        if arr[i] == target:
             return i
 
 
@@ -18,16 +18,18 @@ def binary_search(arr, target):
     # Continuous loop wile low is <= high
     while low <= high:
         middle = int((low + high) // 2)
-        # guess = arr[middle]
+        # guess = arr[middle]clear
         
         if arr[middle] == target:
             return middle
         elif arr[middle] > target:
             high = middle - 1 # everything from middle -1 is ignored and middle-1 becomes the new high
-        elif arr[middle] < target:
+        else:
+            #  arr[middle] < target:
             low = middle + 1
 
     return -1  # not found None also works
 
-# a = [1, 2, 3, 4,5]
-# print(a[len(a) -1]) # the lenght would be five, but index five is position 0 so we need to bring it to 4, give us index 4 = 5th position in a
+a = [1, 2, 3, 4,5]
+print(a[len(a) -1]) # the lenght would be five, but index five is position 0 so we need to bring it to 4, give us index 4 = 5th position in a
+print(range(len(a)))
